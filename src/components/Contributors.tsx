@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
 
-class Contributors extends Component {
+interface ContributorsState {
+    key: number,
+    photo: string,
+    githubPage: string,
+    githubName: string,
+    commits: number
+}
+
+interface ContributorsArrayState {
+    contributors: ContributorsState[] 
+}
+
+class Contributors extends Component<{}, ContributorsArrayState> {
     
-    constructor(props) {
+    constructor(props: any) {
         super(props)
     
         this.state = {
@@ -12,35 +23,19 @@ class Contributors extends Component {
     }
 
     componentDidMount() {
-        /*
-        axios.get('https://github.com/source-academy/cadet-frontend/graphs/contributors')
-            .then(contributors => {
-                this.setState({
-                    contributors
-                })
-            })
-        */
        fetch('https://api.github.com/repos/source-academy/cadet-frontend/contributors')
        .then(results => {
            return results.json();
        })
        .then(contributors => {
-           let contributorList = contributors.map(contributor => {
+           let contributorList = contributors.map((contributor: any)=> {
                 return ({
                     key: contributor.id,
                     photo: contributor.avatar_url,
                     githubPage: contributor.html_url,
                     githubName: contributor.login,
                     commits: contributor.contributions
-                }
-                    /*
-                    <div key={contributor.id}>
-                        <img src={contributor.avatar_url} />
-                        <a href={contributor.html_url}>{contributor.login}</a>
-                        <p>{contributor.contributions}</p>
-                    </div>
-                    */
-                )
+                })
            })
            this.setState({
                contributors: contributorList
