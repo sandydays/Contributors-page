@@ -1,0 +1,185 @@
+       
+        // let urls : ReposState[] = [];
+        
+        // fetch('https://api.github.com/orgs/source-academy/repos')
+        // .then(repos => {
+        //     return repos.json();
+        // })
+        // .then(repos => {
+        //     const endpoints = repos.map((repo: any) => {
+        //         return ({
+        //             key: repo.id,
+        //             repoLink: repo.contributors_url
+        //         })
+        //     });
+        //     console.log(endpoints)
+        //     this.setState({
+        //         ...this.state,
+        //         repos: endpoints
+        //     })
+        //     urls = endpoints;
+        // });
+
+        // Promise.all(urls.map(repo => {
+        //     fetch(repo.repoLink)
+        // }))
+        // .then(repos => {
+        //     repos.forEach(repo => {
+        //         process( repo.json() );
+        //     })
+        // })
+
+                // Promise.all(urls.map(repo => {
+                //     fetch(repo.repoLink)
+                // }))
+        //     .then(res => {
+        //         return res.json();
+        //     })
+        //     .then(contributors => {
+        //         console.log(contributors)
+        //         const contributorList = contributors.map((contributor: any) => {
+        //             return ({
+        //                 key: contributor.id,
+        //                 photo: contributor.avatar_url,
+        //                 githubPage: contributor.html_url,
+        //                 githubName: contributor.login,
+        //                 commits: contributor.contributions
+        //             });
+        //         });
+        //         this.setState({
+        //             ...this.state,
+        //             contributors: [...contributors, contributorList]
+        //         })
+        //     })
+        // }));
+
+
+
+        // .then(endpoints => {
+        //     return endpoints.map((endpoint: string) => {
+        //         return fetch(endpoint);
+        //     })
+        // })
+        // .then(repos => {
+        //     const repoList = repos.map((repo: any) => {
+        //         return fetch(repo.contributors_url)
+        //         .then(res => res.json())
+        //         .then(contributors => {
+        //             const contributorList = contributors.map((contributor: any) => {
+        //                 return ({
+        //                     key: contributor.id,
+        //                     photo: contributor.avatar_url,
+        //                     githubPage: contributor.html_url,
+        //                     githubName: contributor.login,
+        //                     commits: contributor.contributions
+        //                 });
+        //             });
+        //             this.setState({
+        //                 contributors: [...this.state.contributors, contributorList]
+        //             })
+        //             console.log(contributorList);
+        //         });
+        //         // return ({
+        //         //     key: repo.id,
+        //         //     repoLink: fetch(repo.contributors_url).then(res => res.json())
+        //         // });
+        //     });
+        //     console.log(repoList);
+        //     return repoList;
+        // })
+
+
+
+
+
+
+        // .then(contributorsByRepo => {
+        //     return contributorsByRepo.map((contributors: any) => {
+        //         console.log(contributors);
+        //     })
+        //     // console.log(contributorsByRepo);
+        // })
+        // .then(repoList => {
+        //     return repoList.map((repo: RepoState) => {
+        //         return fetch(repo.repoLink);
+        //     });
+        // })
+        // .then(endpoints => {
+        //     console.log(endpoints);
+        //     return endpoints.map((endpoint: any) => {
+        //         return endpoint.json();
+        //     });
+            
+        // })
+
+
+        // .then(contributors => {})
+
+        // .then(endpoints => {
+        //     return endpoints.map((endpoint: RepoState) => {
+        //         return endpoint.repoLink.json();
+        //     });
+        // })
+        // .then(contributors => {
+        //     console.log(contributors)
+        //     const contributorList = contributors.map((contributor: any) => {
+        //         return ({
+        //             key: contributor.id,
+        //             photo: contributor.avatar_url,
+        //             githubPage: contributor.html_url,
+        //             githubName: contributor.login,
+        //             commits: contributor.contributions
+        //         });
+        //     });
+        //     this.setState({
+        //         contributors: contributorList //Think cannot have multiple maps...and overriding the key
+        //     });
+        // });
+
+        /*
+
+                fetch(endpoint.repoLink)
+                .then(contributors => {
+                    return contributors.json();
+                })
+                .then(contributors => {
+                    console.log(contributors)
+                    const contributorList = contributors.map((contributor: any) => {
+                        return ({
+                            key: contributor.id + endpoint.key,
+                            photo: contributor.avatar_url,
+                            githubPage: contributor.html_url,
+                            githubName: contributor.login,
+                            commits: contributor.contributions
+                        });
+                    });
+                    this.setState({
+                        contributors: contributorList //Think cannot have multiple maps...and overriding the key
+                    });
+                    console.log(contributorList)
+                });
+            });
+            
+        });
+        */
+
+       /*
+       fetch('https://api.github.com/repos/source-academy/cadet-frontend/contributors')
+       .then(results => {
+           return results.json();
+       })
+       .then(contributors => {
+           let contributorList = contributors.map((contributor: any)=> {
+                return ({
+                    key: contributor.id,
+                    photo: contributor.avatar_url,
+                    githubPage: contributor.html_url,
+                    githubName: contributor.login,
+                    commits: contributor.contributions
+                })
+           })
+           this.setState({
+               contributors: contributorList
+           })
+       })
+       */
